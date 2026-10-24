@@ -1,0 +1,29 @@
+{
+  "name": "pi-quiet-thinking",
+  "version": "1.0.0",
+  "description": "让 pi 的思考块退到背景：用引用块左栏 + 小标题标签把「推理」与「结论」区分开，并配一套压暗思考色的主题。",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "theme",
+    "thinking"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "extensions",
+    "themes",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/thinking-quote.ts"
+    ],
+    "themes": [
+      "./themes/*.json"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
