@@ -1,4 +1,4 @@
-// thinking-quote: 把「思考块」渲染成带左栏的引用块，用形状（而非颜色）与最终回答区分。
+// think-quote: 把「思考块」渲染成带左栏的引用块，用形状（而非颜色）与最终回答区分。
 //
 // 原理：pi 对思考块渲染 Markdown 时会传入 messageType === "assistant-thinking"，
 // 扩展的 markdown transformer 可以据此改写 markdown 源码。把每行包成 "> " 后，
@@ -11,7 +11,7 @@
 // 标签样式：标签用比正文亮一档的 muted 色并取消斜体，充当小标题。
 // 颜色在 session_start 时从当前主题取，换主题自动跟随，不会与主题失配。
 //
-// 放置位置：~/.pi/agent/extensions/thinking-quote.ts（自动发现，/reload 热重载）
+// 放置位置：~/.pi/agent/extensions/think-quote.ts（自动发现，/reload 热重载）
 
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
 
@@ -33,7 +33,7 @@ type IconName = keyof typeof ICONS;
 
 const LABEL_TEXT = "思考";
 
-export default function thinkingQuote(pi: ExtensionAPI) {
+export default function thinkQuote(pi: ExtensionAPI) {
 	let mode: Mode = "label";
 	let icon: IconName = "chevron";
 	/**
@@ -75,7 +75,7 @@ export default function thinkingQuote(pi: ExtensionAPI) {
 		return `> ${labelLine()}\n>\n${body}`;
 	});
 
-	pi.registerCommand("thinking-quote", {
+	pi.registerCommand("think-quote", {
 		description:
 			"切换思考块样式：off | rail | label（默认），可附图标 chevron|diamond|spark|angle|math|star|none",
 		handler: async (args, ctx) => {

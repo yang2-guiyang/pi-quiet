@@ -1,6 +1,6 @@
 {
 	"$schema": "https://pi.dev/schemas/theme.schema.json",
-	"name": "quiet-thinking",
+	"name": "quiet",
 	"appearance": "dark",
 	"vars": {
 		"text": "okhsl(234 3% 89%)",
